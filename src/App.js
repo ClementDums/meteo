@@ -18,7 +18,6 @@ const App = {
         component: Fav
     }
     ],
-
     initApp() {
         /*******A l'arrivée sur la page**********/
         Home.init();
