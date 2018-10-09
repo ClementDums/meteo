@@ -1,9 +1,161 @@
 //components display
-
+/**********RESET CSS************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/************/
 #home, #search{
    display: none;
 }
 
-h1{
-     color: red;
-  }
+body{
+  background-image: url("./assets/mountain.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: top center;
+  background-attachment: fixed;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.wrapper{
+  width: 400px;
+  margin: 0 auto;
+}
+.address{
+  font-size: 42px;
+  text-align: center;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  margin-top: 150px;
+  color: #82f1df;
+}
+.date{
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 200;
+}
+.temp-weather{
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+.weather-container div{
+  background-size:  100% 100%;
+  margin: 0 auto;
+}
+.weather-container, .temp-container{
+  width: 40%;
+}
+.temp{
+  margin-top: 0;
+  font-size: 90px;
+  text-align: center;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+}
+.temp::before{
+  font-size: 30px;
+  font-weight: 400;
+  content: "°C";
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: -40px;
+}
+.weather{
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  color: #82f1df;
+  margin-top: 15px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+
+.couvert{
+  background-image: url("./assets/cloud.svg");
+  width: 150px;
+  height: 150px;
+}
+.partiellementnuageux{
+  background-image: url("./assets/pnuageux.svg");
+  width: 150px;
+  height: 150px;
+}
+.clair{
+  background-image: url("./assets/sun.svg");
+  height: 100px;
+  width: 100px;
+}
+
+.wind-humi{
+  display: flex;
+  margin-top: 80px;
+}
+.wind-humi div{
+  width: 50%;
+}
+.wind, .humidity{
+  position: relative;
+}
+.wind:before, .humidity:before{
+  background-image: url("./assets/wind.svg");
+  background-size:  100% 100%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  content: "";
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.humidity:before{
+  background-image: url("./assets/humidity.svg");
+}

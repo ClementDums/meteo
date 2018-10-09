@@ -1,9 +1,9 @@
-import CurrentMeteo from './CurrentMeteo.js';
+import Position from './Position.js';
 
 const Home = {
     el:document.querySelector("#home"),
     init() {
-        CurrentMeteo.init();
+        Position.init();
     },
     build(){
         this.el.style.display='block';
