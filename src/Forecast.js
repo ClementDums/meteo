@@ -57,15 +57,16 @@ class ForecastDay {
     }
 
     build(meteo, day) {
-        const days=['Lundi','Mardi','Mercredi'];
+        const days=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
         this.el = document.createElement('li');
         this.el.classList.add('forecast-item');
 
-        console.log(day);
         let date =document.createElement('p');
-
         date.classList.add('date-fc');
-        date.innerHTML =day;
+        if(day>days.length){//boucle jours de la semaine
+            day=day-days.length
+        }
+        date.innerHTML =days[day-1];
 
         let weather =document.createElement('p');
         weather.classList.add('weather-fc');
