@@ -3,9 +3,11 @@
 ## Project download
 ```
 Dans votre dossier meteo : lancez git clone https://github.com/ClementDums/meteo.git
+```
 
 ## Project setup
 ```
+
 Assurez vous d'être dans le dossier meteo et lancez la commande : 
 npm install
 ```
@@ -14,6 +16,7 @@ npm install
 ```
 npm run serve
 ```
+## Autres 
 
 ### Compiles and minifies for production
 ```
