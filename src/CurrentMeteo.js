@@ -44,7 +44,11 @@ const CurrentMeteo = {
         let myClass=response.detail.condition.text.replace(/\s/g, '');
         myClass = myClass.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
         myClass = myClass.toLowerCase();
-        this.el.querySelector('.weather-img').classList.add(myClass);
+
+        this.el.querySelector('#weather-img').className='';
+        this.el.querySelector('#weather-img').classList.add(myClass);
+
+
         this.el.querySelector('.temp').innerHTML = response.detail.temp_c;
         this.el.querySelector('.date').innerHTML = moment().format('dddd Do MMMM');
         this.el.querySelector('.wind').innerHTML = response.detail.wind_kph + ' km/h';

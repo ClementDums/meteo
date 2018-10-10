@@ -1,49 +1,7 @@
 //components display
-/**********RESET CSS************/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+li{
+  list-style-type: none;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/************/
 #home, #search{
    display: none;
 }
@@ -58,9 +16,23 @@ body{
   color: #fff;
   text-align: center;
 }
+
+#addfav{
+  background-image: url("./assets/like.svg");
+  background-size:  100% 100%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  cursor: pointer;
+}
+
 .wrapper{
   width: 400px;
   margin: 0 auto;
+  position: relative;
+  height: 100vh;
 }
 .address{
   font-size: 42px;
@@ -78,12 +50,13 @@ body{
 }
 .temp-weather{
   display: flex;
-  margin-top: 20px;
+  margin-top: 50px;
   justify-content: space-between;
 }
 .weather-container div{
   background-size:  100% 100%;
   margin: 0 auto;
+  background-repeat: no-repeat;
 }
 .weather-container, .temp-container{
   width: 40%;
@@ -115,23 +88,43 @@ body{
   letter-spacing: 2px;
 }
 
+/***GESTION DES METEOS***/
 
+#weather-img{
+  height: 150px;
+  width: 150px;
+}
+
+//orage
+.legerepluieeparseavectonnerreparendroit{
+  background-image: url("./assets/storm.svg");
+}
+//nuages
 .couvert{
   background-image: url("./assets/cloud.svg");
-  width: 150px;
-  height: 150px;
 }
 .partiellementnuageux{
   background-image: url("./assets/pnuageux.svg");
-  width: 150px;
-  height: 150px;
 }
+.brume{  background-image: url("./assets/fog.svg");
+}
+//pluie
+.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere{
+  background-image: url("./assets/rain.svg");
+}
+.pluieforteparmoments, .pluiemoderee{
+  background-image: url("./assets/heavyrain.svg");
+}
+
+//soleil
 .clair, .ensoleille{
   background-image: url("./assets/sun.svg");
   height: 100px;
   width: 100px;
 }
 
+
+/****/
 .wind-humi{
   display: flex;
   margin-top: 80px;
@@ -160,10 +153,30 @@ body{
   background-image: url("./assets/humidity.svg");
 }
 
+/***list***/
+
+.forecast-list{
+  display: flex;
+  justify-content: center;
+}
+.date-fc{
+  text-transform: uppercase;
+}
+.forecast-img{
+  width: 50px;
+  height: 50px;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+.minmax-fc{
+  font-size: 11px;
+}
 /***nav***/
 nav {
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
   left: 0;
   right: 0;
 }

@@ -10,7 +10,7 @@ const Forecast = {
     },
     MeteoRequest(e) {
         const address = e;
-        const daysNb = 7;// nombre de jours en prévision a afficher en comptant aujourd'hui
+        const daysNb = 5;// nombre de jours en prévision a afficher en comptant aujourd'hui
         let i = 0;
         const axios = require('axios');
         axios.get('http://api.apixu.com/v1/forecast.json?', {
@@ -57,7 +57,7 @@ class ForecastDay {
     }
 
     build(meteo, day) {
-        const days=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+        const days=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
         this.el = document.createElement('li');
         this.el.classList.add('forecast-item');
 
@@ -68,13 +68,17 @@ class ForecastDay {
         }
         date.innerHTML =days[day-1];
 
-        let weather =document.createElement('p');
-        weather.classList.add('weather-fc');
-        weather.innerHTML =meteo.day.condition.text;
+        let weather =document.createElement('div');
+
+        let myClass=meteo.day.condition.text.replace(/\s/g, '');
+        myClass = myClass.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        myClass = myClass.toLowerCase();
+        weather.classList.add(myClass);
+        weather.classList.add('forecast-img');
 
         let minmax =document.createElement('p');
         minmax.classList.add('minmax-fc');
-        minmax.innerHTML =meteo.day.mintemp_c+" / " + meteo.day.maxtemp_c+"°C";
+        minmax.innerHTML =meteo.day.avgtemp_c+"°C";
 
         this.el.appendChild(date);
         this.el.appendChild(weather);

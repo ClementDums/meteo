@@ -22,6 +22,7 @@ const App = {
         /*******A l'arrivée sur la page**********/
         Home.init();
         Search.init();
+        Fav.init();
         let currentPage =location.hash;
         let i =0;
         var pageFound = false;
