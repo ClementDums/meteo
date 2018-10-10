@@ -3,7 +3,7 @@ import CurrentMeteo from "./CurrentMeteo";
 
 /****RENVOIE L'ADDRESSE ACTUELLE A CURRENT METEO ET FORECAST****/
 const EVENT_MANAGER = document.createElement('div');
-const meteoKey = '774e096c1c894c02b0a95400180210';
+const meteoKey = '8bc2895294024765b5181112181010';
 const Position = {
     init() {
         EVENT_MANAGER.addEventListener('sendAddress', (event) => this.sendAddress(event));

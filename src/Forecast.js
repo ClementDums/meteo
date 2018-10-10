@@ -1,6 +1,6 @@
 /****MISE EN PLACE PRÉVISIONS MÉTÉO****/
 const EVENT_MANAGER = document.createElement('div');
-const meteoKey = '774e096c1c894c02b0a95400180210';
+const meteoKey = '8bc2895294024765b5181112181010';
 var moment = require('moment');
 moment.locale('fr');
 const Forecast = {

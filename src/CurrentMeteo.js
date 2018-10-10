@@ -1,4 +1,5 @@
 import Position from "./Position";
+import addFav from './addFav.js';
 
 /****MISE EN PLACE METEO ACTUELLE****/
 var moment = require('moment');
@@ -9,15 +10,19 @@ const meteoKey = '774e096c1c894c02b0a95400180210';
 //Renvoyer la météo actuelle en fonction de la ville
 const CurrentMeteo = {
     el: document.querySelector('.current-meteo'),
+    currentAddress :"",
     init() {
-        EVENT_MANAGER.addEventListener('setMeteo', (event) => this.setMeteo(event));
+
+        EVENT_MANAGER.addEventListener('sendAddress', (event) => this.setMeteo(event));
         EVENT_MANAGER.addEventListener('displayMeteo', (event) => this.displayMeteo(event));
+        this.el.querySelector('.addfav').addEventListener('click', () => addFav.setFav(this.currentAddress));
     },
     fillAddress(response) {
         let cityAddress;
         cityAddress = response;
         this.el.querySelector('.address').innerHTML = cityAddress;
-        EVENT_MANAGER.dispatchEvent(new CustomEvent('setMeteo', {detail: cityAddress}));
+        EVENT_MANAGER.dispatchEvent(new CustomEvent('sendAddress', {detail: cityAddress}));
+        this.currentAddress=cityAddress;
     },
 
     setMeteo(e) {
