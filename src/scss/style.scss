@@ -29,7 +29,9 @@ body{
 }
 
 .wrapper{
-  width: 400px;
+  width: 500px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin: 0 auto;
   position: relative;
   height: 100vh;
@@ -109,7 +111,7 @@ body{
 .brume{  background-image: url("./assets/fog.svg");
 }
 //pluie
-.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere{
+.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .bruinelegereeparse{
   background-image: url("./assets/rain.svg");
 }
 .pluieforteparmoments, .pluiemoderee{
