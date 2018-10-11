@@ -1,4 +1,5 @@
 import Position from "./Position";
+import addFav from "./addFav";
 
 const meteoKey = '774e096c1c894c02b0a95400180210';
 const EVENT_MANAGER = document.createElement('div');
@@ -10,6 +11,7 @@ const SearchCity = {
         this.form.addEventListener('submit', (event) => this.newAddress(event));
         this.city.addEventListener('keyup', (event) => this.completeAutoQuery(event));
         EVENT_MANAGER.addEventListener('completeAutoFill', (event) => this.completeAutoFill(event));
+        this.el.querySelector('.addfav').addEventListener('click', () => addFav.addItem(this.el.querySelector('.search-city').value));
     },
     completeAutoQuery(e) {
         let input = e.target.value;

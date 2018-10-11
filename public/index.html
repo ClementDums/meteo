@@ -11,18 +11,19 @@
     <title>meteo</title>
 </head>
 <body>
-<header>
 
-</header>
 <main>
     <div class="wrapper">
 
         <section id="home">
 
             <div class="current-meteo">
-                <div class="addfav"></div>
-                <p class="address"></p>
-                <p class="date"></p>
+                <div class="date-address">
+                    <span class="addfav"></span>
+                    <p class="address"></p>
+                    <p class="date"></p>
+                </div>
+
                 <div class="temp-weather">
                     <div class="temp-container">
                         <p class="temp"></p>
@@ -30,7 +31,7 @@
 
 
                     <div class="weather-container">
-                        <div id="weather-img" ></div>
+                        <div id="weather-img"></div>
                         <p class="weather"></p>
                     </div>
 
@@ -50,27 +51,39 @@
             </div>
         </section>
         <section id="search">
-            <form>
-                <input class="search-city" name="search-city" list="itemsList" placeholder="Saisir la ville"
-                       type="text">
-                <datalist id="itemsList">
-                </datalist>
-                <input type="submit">
-            </form>
+            <div class="search-container">
+                <h2>Chercher votre ville</h2>
+
+                <form>
+                    <span class="addfav"></span>
+                    <input class="search-city" name="search-city" list="itemsList" placeholder="Saisir la ville"
+                           type="text">
+                    <datalist id="itemsList">
+                    </datalist>
+                    <input type="submit">
+                </form>
+            </div>
         </section>
         <section id="fav">
+            <div class="fav-container">
+                <div class="fav-title">
+                    <h2>Vos favoris</h2>
+                </div>
+                <ul class="fav-list">
 
+                </ul>
+            </div>
         </section>
         <nav>
             <ul>
 
-                    <li><a href="#home"></a></li>
+                <li><a href="#home"></a></li>
 
 
-                    <li><a href="#search"></a></li>
+                <li><a href="#search"></a></li>
 
 
-                    <li><a href="#fav"></a></li>
+                <li><a href="#fav"></a></li>
 
             </ul>
         </nav>

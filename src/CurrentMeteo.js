@@ -15,7 +15,7 @@ const CurrentMeteo = {
 
         EVENT_MANAGER.addEventListener('sendAddress', (event) => this.setMeteo(event));
         EVENT_MANAGER.addEventListener('displayMeteo', (event) => this.displayMeteo(event));
-        this.el.querySelector('.addfav').addEventListener('click', () => addFav.setFav(this.currentAddress));
+        this.el.querySelector('.addfav').addEventListener('click', () => addFav.addItem(this.currentAddress));
     },
     fillAddress(response) {
         let cityAddress;

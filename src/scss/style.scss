@@ -1,20 +1,76 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 //components display
+ul{
+  padding: 0;
+}
 li{
   list-style-type: none;
 }
-#home, #search{
+#home, #search, #fav{
    display: none;
 }
 
 body{
-  background-image: url("./assets/mountain.jpg");
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: top center;
-  background-attachment: fixed;
   font-family: 'Raleway', sans-serif;
-  color: #fff;
+  color: #5a5a5a;
   text-align: center;
+  margin: 0;
+}
+
+.wrapper{
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+}
+//home
+.date-address{
+  padding: 20px;
+  background: -moz-linear-gradient(45deg, #e76d6e 0%, #e38b5d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #e76d6e 0%,#e38b5d 100%); /* Chrome10-25,Safari5.1-6 */
+  padding-right: 100px;
+  padding-left: 100px;
 }
 
 .addfav{
@@ -24,36 +80,33 @@ body{
   height: 20px;
   position: absolute;
   top: 20px;
-  right: 0;
+  right: 50px;
   cursor: pointer;
 }
 
-.wrapper{
-  width: 500px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 0 auto;
-  position: relative;
-  height: 100vh;
-}
+
 .address{
-  font-size: 42px;
+  font-size: 12px;
   text-align: center;
-  font-weight: 100;
   letter-spacing: 1px;
-  margin-bottom: 0;
-  margin-top: 50px;
-  color: #82f1df;
+  font-weight: 400;
+  color: #fff;
 }
+
 .date{
   margin-top: 10px;
   font-size: 24px;
   font-weight: 200;
+  color: #fff;
 }
+
+/****/
+/***TEMP CURRENT***/
 .temp-weather{
-  display: flex;
   margin-top: 50px;
+  display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .weather-container div{
   background-size:  100% 100%;
@@ -61,8 +114,9 @@ body{
   background-repeat: no-repeat;
 }
 .weather-container, .temp-container{
-  width: 40%;
+  width: 50%;
 }
+
 .temp{
   margin-top: 0;
   font-size: 90px;
@@ -84,34 +138,33 @@ body{
   font-size: 15px;
   font-weight: 500;
   position: relative;
-  color: #82f1df;
   margin-top: 15px;
   text-align: center;
   letter-spacing: 2px;
 }
 
+#weather-img{
+  height: 100px;
+  width: 100px;
+}
 /***GESTION DES METEOS***/
 
-#weather-img{
-  height: 150px;
-  width: 150px;
-}
 
 //orage
 .legerepluieeparseavectonnerreparendroit{
   background-image: url("./assets/storm.svg");
 }
 //nuages
-.couvert{
+.partiellementnuageux,{
   background-image: url("./assets/cloud.svg");
 }
-.partiellementnuageux{
+.couvert, .nuageux{
   background-image: url("./assets/pnuageux.svg");
 }
 .brume{  background-image: url("./assets/fog.svg");
 }
 //pluie
-.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .bruinelegereeparse{
+.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .bruinelegereeparse, .aversedepluielegere {
   background-image: url("./assets/rain.svg");
 }
 .pluieforteparmoments, .pluiemoderee{
@@ -127,12 +180,14 @@ body{
 
 
 /****/
+/****VENT HUMIDITE****/
 .wind-humi{
   display: flex;
-  margin-top: 80px;
+  margin-top: 60px;
+  justify-content: center;
 }
 .wind-humi div{
-  width: 50%;
+  width: 20%;
 }
 .wind, .humidity{
   position: relative;
@@ -155,14 +210,16 @@ body{
   background-image: url("./assets/humidity.svg");
 }
 
-/***list***/
+/***FORECAST***/
 
 .forecast-list{
+  margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .date-fc{
   text-transform: uppercase;
+  color: #e87677;
 }
 .forecast-img{
   width: 50px;
@@ -175,20 +232,96 @@ body{
 .minmax-fc{
   font-size: 11px;
 }
+/***Search***/
+#search h2{
+  color: #fff;
+  font-size: 32px;
+  font-weight: 400;
+}
+.search-container{
+  background: -moz-linear-gradient(45deg, #e76d6e 0%, #e38b5d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #e76d6e 0%,#e38b5d 100%); /* Chrome10-25,Safari5.1-6 */
+  padding: 20px;
+  border-radius: 2px;
+  position: relative;
+}
+.search-city{
+  border-radius: 2px;
+  margin-top: 50px;
+  border: none;
+  height: 30px;
+  font-family: 'Raleway', sans-serif;
+  padding-left: 5px;
+  color: #5a5a5a;
+}
+input[type="submit"]{
+  font-family: 'Raleway', sans-serif;
+  color: #5a5a5a;
+  border-radius: 2px;
+  border: none;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+}
+/***fav***/
+.fav-title{
+  padding-top: 20px;
+  background: -moz-linear-gradient(45deg, #e76d6e 0%, #e38b5d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #e76d6e 0%,#e38b5d 100%); /* Chrome10-25,Safari5.1-6 */
+  color: #fff;
+}
+.fav-container h2{
+  font-size: 32px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+.fav-list{margin-top: 60px}
+
+.fav-list li p{
+  float: left;
+  margin-left: 50px;
+}
+
+.fav-list li span{
+  margin-right: 50px;
+  height: 20px;
+  width: 20px;
+  background-image: url("./assets/delete.svg");
+  background-size:  100% 100%;
+  display: block;
+  float: right;
+  cursor: pointer;
+}
+.fav-list li{
+  margin-top: 20px;
+}
+.fav-list li div{
+  height: 40px;
+}
+#search .addfav{
+  position: inherit;
+  display: inline-block;
+  margin-right: 20px;
+}
 /***nav***/
 nav {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 50px;
   left: 0;
   right: 0;
 }
 nav li{
+  margin-left: 5px;
   height: 13px;
   width: 13px;
   display: inline-block;
-  background: #fff;
+  background: #e87677;
   border-radius: 50px;
 }
+
 nav li a {
   text-decoration: none;
   display: block;
