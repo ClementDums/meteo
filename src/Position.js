@@ -35,16 +35,18 @@ const Position = {
     sendAddress(response) {
         response=response.detail.data.address;
         if (response.city_district) {
-            CurrentMeteo.fillAddress(response.city_district);
-            Forecast.MeteoRequest(response.city_district);
+            this.dispatchAddress(response.city_district);
         } else if (response.city) {
-            CurrentMeteo.fillAddress(response.city);
-            Forecast.MeteoRequest(response.city);
+            this.dispatchAddress(response.city);
         } else if (response.village) {
-            CurrentMeteo.fillAddress(response.village);
-            Forecast.MeteoRequest(response.village);
+            this.dispatchAddress(response.village);
         }
     },
+    dispatchAddress(address){
+        CurrentMeteo.fillAddress(address);
+        Forecast.MeteoRequest(address);
+    },
+
     sendAddressSearch(response){
         CurrentMeteo.fillAddress(response);
         Forecast.MeteoRequest(response);

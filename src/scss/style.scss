@@ -168,7 +168,7 @@ body{
 .brume{  background-image: url("./assets/fog.svg");
 }
 //pluie
-.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .bruinelegereeparse, .aversedepluielegere {
+.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .pluielegere, .bruinelegereeparse, .aversedepluielegere {
   background-image: url("./assets/rain.svg");
 }
 .pluieforteparmoments, .pluiemoderee{
@@ -302,10 +302,17 @@ input[type="submit"]{
   cursor: pointer;
 }
 .fav-list li{
-  margin-top: 20px;
+   margin-top: 20px;
+  cursor: pointer;
+ }
+
+.fav-list li:hover{
+  background: rgba(0,0,0,0.2);
 }
+
 .fav-list li div{
   height: 40px;
+  padding-top: 20px;
 }
 #search .addfav{
   position: inherit;

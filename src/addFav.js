@@ -1,17 +1,22 @@
+import Position from "./Position";
 const addFav = {
     el: document.querySelector("#fav"),
     favList: [],
     init() {
-
+        for (let key in localStorage){
+            console.log(key)
+        }
     },
     addItem(e) {
         let test = -1;//valeur par défaut
         test = this.favList.indexOf(e);
         if (test === -1) {//si pas déja en favoris
             this.favList.push(e);
+            localStorage.setItem('city'+e, e);
             let newItem = new ListFav();
             newItem.build(e);
             this.el.querySelector('.fav-list').appendChild(newItem.el);
+
         }
     },
     deleteItem(e){
@@ -24,9 +29,12 @@ const addFav = {
 }
 
 class ListFav {
-    init(el){
+    init(el, address){
+        this.address = address;
         this.el = el;//recuperation de l'élément du dom
-        this.el.querySelector('.delete-item').addEventListener('click', (event) => this.remove(event));
+        this.el.querySelector('.delete-item').addEventListener('click', () => this.remove());
+        this.el.addEventListener('click', () => this.setHome());
+
     }
     build(e) {
         this.el = document.createElement('li');
@@ -39,14 +47,17 @@ class ListFav {
         container.appendChild(remove);
         this.el.appendChild(container);
 
-        this.init(this.el);
+        this.init(this.el, e);
 
     }
-    remove(e){
+    remove(){
         this.el.parentNode.removeChild(this.el);
-        let address = this.el.querySelector('p').innerHTML;
-        addFav.deleteItem(address);
+        addFav.deleteItem(this.address);
+        localStorage.removeItem('city'+this.address);
         delete this;
+    }
+    setHome(){
+        Position.dispatchAddress(this.address);
     }
 }
 
