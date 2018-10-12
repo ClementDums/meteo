@@ -1,3 +1,5 @@
+/***RESET CSS***/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,6 +50,7 @@ ul{
 li{
   list-style-type: none;
 }
+/***MAIN***/
 #home, #search, #fav{
    display: none;
 }
@@ -64,7 +67,8 @@ body{
   position: relative;
   width: 400px;
 }
-//home
+/*************/
+/***HOME***/
 .date-address{
   padding: 20px;
   background: -moz-linear-gradient(45deg, #e76d6e 0%, #e38b5d 100%); /* FF3.6-15 */
@@ -101,7 +105,7 @@ body{
 }
 
 /****/
-/***TEMP CURRENT***/
+/***Current weather***/
 .temp-weather{
   margin-top: 50px;
   display: flex;
@@ -147,7 +151,7 @@ body{
   height: 100px;
   width: 100px;
 }
-/***GESTION DES METEOS***/
+/***Gestion météos***/
 
 
 //orage
@@ -180,7 +184,7 @@ body{
 
 
 /****/
-/****VENT HUMIDITE****/
+/****vent humidité****/
 .wind-humi{
   display: flex;
   margin-top: 60px;
@@ -209,7 +213,7 @@ body{
 .humidity:before{
   background-image: url("./assets/humidity.svg");
 }
-
+/*******************/
 /***FORECAST***/
 
 .forecast-list{
@@ -232,7 +236,8 @@ body{
 .minmax-fc{
   font-size: 11px;
 }
-/***Search***/
+/***************/
+/***SEARCH***/
 #search h2{
   color: #fff;
   font-size: 32px;
@@ -266,7 +271,8 @@ input[type="submit"]{
   cursor: pointer;
   margin-left: 20px;
 }
-/***fav***/
+/**************/
+/***FAV***/
 .fav-title{
   padding-top: 20px;
   background: -moz-linear-gradient(45deg, #e76d6e 0%, #e38b5d 100%); /* FF3.6-15 */
@@ -306,7 +312,8 @@ input[type="submit"]{
   display: inline-block;
   margin-right: 20px;
 }
-/***nav***/
+/******************/
+/***NAV***/
 nav {
   position: fixed;
   bottom: 50px;

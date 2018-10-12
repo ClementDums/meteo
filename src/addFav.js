@@ -5,9 +5,9 @@ const addFav = {
 
     },
     addItem(e) {
-        let test = -1;
+        let test = -1;//valeur par défaut
         test = this.favList.indexOf(e);
-        if (test === -1) {
+        if (test === -1) {//si pas déja en favoris
             this.favList.push(e);
             let newItem = new ListFav();
             newItem.build(e);
