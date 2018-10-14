@@ -171,7 +171,7 @@ margin: 0 auto;}
 
 
 //orage
-.legerepluieeparseavectonnerreparendroit{
+.legerepluieeparseavectonnerreparendroit, .foyersorageuxaproximite{
   background-image: url("./assets/storm.svg");
 }
 //nuages
@@ -181,10 +181,10 @@ margin: 0 auto;}
 .couvert, .nuageux{
   background-image: url("./assets/pnuageux.svg");
 }
-.brume, .brouillard{  background-image: url("./assets/fog.svg");
+.brume, .brouillard ,.brouillardgivrant{  background-image: url("./assets/fog.svg");
 }
 //pluie
-.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .pluielegere, .bruinelegereeparse, .aversedepluielegere {
+.aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .pluielegere, .bruinelegereeparse, .aversedepluielegere, .Gresileparsaproximite ,.bruineverglaçanteeparseaproximite, .bruineverglacante{
   background-image: url("./assets/rain.svg");
 }
 .pluieforteparmoments, .pluiemoderee, .pluieforte{
@@ -197,8 +197,12 @@ margin: 0 auto;}
   height: 100px;
   width: 100px;
 }
-
-
+//neige
+.neigeeparseaproximite, .rafalesdeneige ,.blizzard{
+  background-image: url("./assets/sun.svg");
+  height: 100px;
+  width: 100px;
+}
 /****/
 /****vent humidité****/
 .wind-humi{
