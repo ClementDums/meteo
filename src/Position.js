@@ -43,12 +43,12 @@ const Position = {
         }
     },
     dispatchAddress(address){
-        CurrentMeteo.fillAddress(address);
+        CurrentMeteo.getAddress(address);
         Forecast.MeteoRequest(address);
     },
 
     sendAddressSearch(response){
-        CurrentMeteo.fillAddress(response);
+        CurrentMeteo.getAddress(response);
         Forecast.MeteoRequest(response);
     }
 }

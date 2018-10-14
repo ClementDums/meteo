@@ -28,6 +28,7 @@ const App = {
         var pageFound = false;
         for(i;i<this.nav.length;i+=1){
             if(this.nav[i].url===currentPage){
+                document.querySelector('.'+this.nav[i].name+'-nav').classList.add('active');
                 this.nav[i].component.build();
                 pageFound=true;
             }
@@ -42,14 +43,18 @@ const App = {
     },
     /*******Au changement de page**********/
     changeDisplay() {
+        document.querySelector('.valid').classList.remove('active');
+        document.querySelector('.valid-fav').classList.remove('active');
         this.nav.forEach(function (item) {
             item.component.hide();
         });
         let i = 0;
         var pageFound=false;
         for (i; i < this.nav.length; i += 1) {
+            document.querySelector('.'+this.nav[i].name+'-nav').classList.remove('active');
             if (this.nav[i].url === location.hash) {
                 this.nav[i].component.build();
+                document.querySelector('.'+this.nav[i].name+'-nav').classList.add('active');
                 pageFound=true;
             }
         }

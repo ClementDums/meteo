@@ -65,17 +65,21 @@ body{
 .wrapper{
   margin: 0 auto;
   position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.inner-wrap{
   width: 400px;
+  margin: 0 auto;
 }
 /*************/
 /***HOME***/
 .date-address{
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom:20px ;
   background: -moz-linear-gradient(45deg, #e76d6e 0%, #e38b5d 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(45deg, #e76d6e 0%,#e38b5d 100%); /* Chrome10-25,Safari5.1-6 */
-  padding-right: 100px;
-  padding-left: 100px;
-}
+margin: 0 auto;}
 
 .addfav{
   background-image: url("./assets/like.svg");
@@ -86,8 +90,20 @@ body{
   top: 20px;
   right: 50px;
   cursor: pointer;
-}
 
+}
+.bandeau{
+  width: 80%;
+  margin: 0 auto;
+}
+.addfavText{
+  font-size: 10px;
+  color: #fff;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  opacity: 0;
+}
 
 .address{
   font-size: 12px;
@@ -165,13 +181,13 @@ body{
 .couvert, .nuageux{
   background-image: url("./assets/pnuageux.svg");
 }
-.brume{  background-image: url("./assets/fog.svg");
+.brume, .brouillard{  background-image: url("./assets/fog.svg");
 }
 //pluie
 .aversedepluiemoderee, .pluiemodereeparmoments,.pluieeparseaproximite, .bruinelegere, .pluielegere, .bruinelegereeparse, .aversedepluielegere {
   background-image: url("./assets/rain.svg");
 }
-.pluieforteparmoments, .pluiemoderee{
+.pluieforteparmoments, .pluiemoderee, .pluieforte{
   background-image: url("./assets/heavyrain.svg");
 }
 
@@ -238,6 +254,13 @@ body{
 }
 /***************/
 /***SEARCH***/
+#search .addfavText{
+  z-index: 9;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  opacity: 0;
+}
 #search h2{
   color: #fff;
   font-size: 32px;
@@ -270,7 +293,9 @@ input[type="submit"]{
   background: #fff;
   cursor: pointer;
   margin-left: 20px;
+  margin-top: 10px;
 }
+
 /**************/
 /***FAV***/
 .fav-title{
@@ -287,8 +312,6 @@ input[type="submit"]{
 .fav-list{margin-top: 60px}
 
 .fav-list li p{
-  float: left;
-  margin-left: 50px;
 }
 
 .fav-list li span{
@@ -298,21 +321,26 @@ input[type="submit"]{
   background-image: url("./assets/delete.svg");
   background-size:  100% 100%;
   display: block;
-  float: right;
   cursor: pointer;
 }
 .fav-list li{
    margin-top: 20px;
   cursor: pointer;
  }
+.fav-list li div div{
+  width: 80%;
+  text-align: left;
+}
 
-.fav-list li:hover{
+.fav-list li div div:hover{
   background: rgba(0,0,0,0.2);
 }
 
 .fav-list li div{
   height: 40px;
-  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 #search .addfav{
   position: inherit;
@@ -341,4 +369,46 @@ nav li a {
   display: block;
   width: 100%;
   height: 100%;
+}
+nav li.active{
+  background: rgba(0,0,0,0.2);
+}
+
+/***ERREURS***/
+.errors-msg{
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  color:#e87677;
+  background: #fff;
+  width: 100%;
+  display: none;
+}
+
+.errors-msg.active{
+  display: block;
+}
+
+.valid, .valid-fav{
+  margin-top: 20px;
+  display: none;
+}
+.valid.active, .valid-fav.active{
+  display: block;
+}
+/****MEDIAS****/
+@media screen and (max-width: 450px){
+  #home .addfav{
+    right: 10px;
+  }
+  .addfavText{
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .inner-wrap{
+    width: 300px;
+  }
+
 }

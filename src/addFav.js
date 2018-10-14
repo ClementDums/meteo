@@ -3,9 +3,22 @@ const addFav = {
     el: document.querySelector("#fav"),
     favList: [],
     init() {
-        for (let key in localStorage){
-            console.log(key)
+        let archive = {}, // Notice change here
+            keys = Object.keys(localStorage),
+            i = keys.length;
+
+        while ( i-- ) {
+            archive[keys[i]] = localStorage.getItem( keys[i] );
+            if(archive[keys[i]]!='SILENT') {
+                this.favList.push(archive[keys[i]]);
+                let newItem = new ListFav();
+                newItem.build(archive[keys[i]]);
+                this.el.querySelector('.fav-list').appendChild(newItem.el);
+
+            }
         }
+
+
     },
     addItem(e) {
         let test = -1;//valeur par défaut
@@ -39,11 +52,13 @@ class ListFav {
     build(e) {
         this.el = document.createElement('li');
         let container = document.createElement('div');
+        let textContainer = document.createElement('div');
         let p = document.createElement('p');
         let remove = document.createElement('span');
         remove.classList.add('delete-item');
         p.innerHTML = e;
-        container.appendChild(p);
+        textContainer.appendChild(p);
+        container.appendChild(textContainer);
         container.appendChild(remove);
         this.el.appendChild(container);
 
@@ -57,6 +72,7 @@ class ListFav {
         delete this;
     }
     setHome(){
+        document.querySelector('.valid-fav').classList.add('active');
         Position.dispatchAddress(this.address);
     }
 }

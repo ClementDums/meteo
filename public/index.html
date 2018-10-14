@@ -16,74 +16,86 @@
     <div class="wrapper">
 
         <section id="home">
-
             <div class="current-meteo">
                 <div class="date-address">
-                    <span class="addfav"></span>
-                    <p class="address"></p>
-                    <p class="date"></p>
+                    <div class="inner-wrap">
+                        <div class="bandeau">
+                            <span class="addfav"></span>
+                            <span class="addfavText">Ajouter aux favoris</span>
+                            <p class="address"></p>
+                            <p class="date"></p>
+                        </div>
+                    </div>
                 </div>
+                <div class="inner-wrap">
+                    <div class="temp-weather">
+                        <div class="temp-container">
+                            <p class="temp"></p>
+                        </div>
 
-                <div class="temp-weather">
-                    <div class="temp-container">
-                        <p class="temp"></p>
+
+                        <div class="weather-container">
+                            <div id="weather-img"></div>
+                            <p class="weather"></p>
+                        </div>
+
+
+                    </div>
+                    <div class="wind-humi">
+                        <div><p class="wind"></p></div>
+                        <div>
+                            <p class="humidity"></p></div>
                     </div>
 
 
-                    <div class="weather-container">
-                        <div id="weather-img"></div>
-                        <p class="weather"></p>
+                    <div class="forecast">
+                        <ul class="forecast-list">
+                        </ul>
                     </div>
-
-
                 </div>
-                <div class="wind-humi">
-                    <div><p class="wind"></p></div>
-                    <div>
-                        <p class="humidity"></p></div>
-                </div>
-
-            </div>
-
-            <div class="forecast">
-                <ul class="forecast-list">
-                </ul>
             </div>
         </section>
         <section id="search">
+            <div class="errors-msg"><p></p></div>
             <div class="search-container">
                 <h2>Chercher votre ville</h2>
 
                 <form>
                     <span class="addfav"></span>
+                    <span class="addfavText">Ajouter aux favoris</span>
                     <input class="search-city" name="search-city" list="itemsList" placeholder="Saisir la ville"
                            type="text">
                     <datalist id="itemsList">
                     </datalist>
                     <input type="submit">
                 </form>
+
             </div>
+            <div class="valid"><p>Recherche effectuée !</p></div>
         </section>
         <section id="fav">
             <div class="fav-container">
                 <div class="fav-title">
                     <h2>Vos favoris</h2>
                 </div>
-                <ul class="fav-list">
+                <div class="valid-fav">Ville ajoutée à la page d'accueil</div>
+                <div class="inner-wrap">
+                    <ul class="fav-list">
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </section>
         <nav>
             <ul>
 
-                <li><a href="#home"></a></li>
+                <li class="home-nav"><a href="#home"></a></li>
 
 
-                <li><a href="#search"></a></li>
+                <li class="search-nav"><a href="#search"></a></li>
 
 
-                <li><a href="#fav"></a></li>
+                <li class="fav-nav"><a href="#fav"></a></li>
 
             </ul>
         </nav>

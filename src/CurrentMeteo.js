@@ -17,13 +17,18 @@ const CurrentMeteo = {
         EVENT_MANAGER.addEventListener('displayMeteo', (event) => this.displayMeteo(event));
         this.el.querySelector('.addfav').addEventListener('click', () => addFav.addItem(this.currentAddress));
     },
-    fillAddress(response) {
+
+    getAddress(response){
         let cityAddress;
         cityAddress = response;
-        this.el.querySelector('.address').innerHTML = cityAddress;
         EVENT_MANAGER.dispatchEvent(new CustomEvent('sendAddress', {detail: cityAddress}));
         this.currentAddress=cityAddress;
     },
+    fillAddress(response) {
+        this.el.querySelector('.address').innerHTML = response;
+    },
+
+
 
     setMeteo(e) {
         const address = e.detail;
@@ -35,13 +40,19 @@ const CurrentMeteo = {
                 lang: 'fr'
             }
         })
-            .then(function (response) {
-                EVENT_MANAGER.dispatchEvent(new CustomEvent('displayMeteo', {detail: response.data.current}));
+            .then(response => {
+                if(response) {
+                    this.fillAddress(address);
+                    document.querySelector('.errors-msg').classList.remove('active');
+                    EVENT_MANAGER.dispatchEvent(new CustomEvent('displayMeteo', {detail: response.data.current}));
+                };
             })
             .catch(error => {
                 if(error.response.status ===400 ){
-                    console.log('Non trouvé');
+                    document.querySelector('.errors-msg').classList.add('active');
+                    document.querySelector('.errors-msg p').innerHTML = "La ville que vous avez cherchée n'existe pas";
                 }
+
         });
     },
     displayMeteo(response) {

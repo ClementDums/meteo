@@ -40,6 +40,7 @@ const SearchCity = {
 
     newAddress(e) {
         e.preventDefault();
+        document.querySelector('.valid').classList.add('active');
         let input = e.target.querySelector('.search-city');
         Position.sendAddressSearch(input.value);
     },

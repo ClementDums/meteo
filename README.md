@@ -1,4 +1,4 @@
-# meteo
+﻿# meteo
 
 ## Project download
 ```
@@ -17,6 +17,8 @@ npm install
 ```
 Assurez vous d'être dans le dossier meteo et lancez la commande dans le terminal: 
 npm run serve
+
+Puis lancez dans votre navigateur : http://localhost:8080/#home
 ```
 ## Autres 
 
