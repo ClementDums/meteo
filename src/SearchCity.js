@@ -13,6 +13,7 @@ const SearchCity = {
         EVENT_MANAGER.addEventListener('completeAutoFill', (event) => this.completeAutoFill(event));
         this.el.querySelector('.addfav').addEventListener('click', () => addFav.addItem(this.el.querySelector('.search-city').value));
     },
+    //autocompletion
     completeAutoQuery(e) {
         let input = e.target.value;
         let itemsList = this.el.querySelector('#itemsList');
@@ -37,7 +38,7 @@ const SearchCity = {
                 })
         }
     },
-
+    //envoi nouvelle adresse pour meteo
     newAddress(e) {
         e.preventDefault();
         document.querySelector('.valid').classList.add('active');

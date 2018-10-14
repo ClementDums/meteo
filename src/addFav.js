@@ -3,7 +3,7 @@ const addFav = {
     el: document.querySelector("#fav"),
     favList: [],
     init() {
-        let archive = {}, // Notice change here
+        let archive = {},
             keys = Object.keys(localStorage),
             i = keys.length;
 

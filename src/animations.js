@@ -1,7 +1,7 @@
-import TweenLite from "gsap/TweenLite";
 import TweenMax from "gsap/TweenMax";
 const animations ={
     init(){
+        //Animation hover ajout favoris
         let addFav= document.querySelector('.addfav');
         let addFavText= document.querySelector('.addfavText');
         addFav.addEventListener('mouseenter', () => {
