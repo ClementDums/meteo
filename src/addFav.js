@@ -23,7 +23,8 @@ const addFav = {
     addItem(e) {
         let test = -1;//valeur par défaut
         test = this.favList.indexOf(e);
-        if (test === -1) {//si pas déja en favoris
+        const searchError = document.querySelector('.errors-msg');
+        if (test === -1 && !searchError.classList.contains('active')) {//si pas déja en favoris
             this.favList.push(e);
             localStorage.setItem('city'+e, e);
             let newItem = new ListFav();
@@ -46,13 +47,15 @@ class ListFav {
         this.address = address;
         this.el = el;//recuperation de l'élément du dom
         this.el.querySelector('.delete-item').addEventListener('click', () => this.remove());
-        this.el.addEventListener('click', () => this.setHome());
+        const textContainer = this.el.querySelector(".text-container");
+        textContainer.addEventListener('click', () => this.setHome());
 
     }
     build(e) {
         this.el = document.createElement('li');
         let container = document.createElement('div');
         let textContainer = document.createElement('div');
+        textContainer.classList.add("text-container");
         let p = document.createElement('p');
         let remove = document.createElement('span');
         remove.classList.add('delete-item');
